@@ -1,9 +1,9 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
+import home from '@/'
 
 
-const routes = [
 
-]
+const routes = []
 
 const router = createRouter({
     history: createWebHashHistory(),
