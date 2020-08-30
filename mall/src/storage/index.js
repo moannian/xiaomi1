@@ -1,7 +1,12 @@
 // 数据存储的应用箱
 const STORAGE_KEY = 'mall'
 export default {
-    //存储值
+    // 获取整个数据
+    getStorage() {
+        // 使用JSON的方法 获取mall信息
+        return JSON.parse(window.sessionStorage.getItem(STORAGE_KEY) || '{}')
+    },
+    //设置值
     setItem(key, value, module_name) {
         if (module_name) {
             let val = this.getItem(module_name)
@@ -24,11 +29,7 @@ export default {
         }
         return this.getStorage()[key]
     },
-    // 获取整个数据
-    getStorage() {
-        // 获取mall信息
-        return JSON.parse(window.sessionStorage.getItem(STORAGE_KEY) || '{}')
-    },
+
     // 清空某一个值
     clear(key, module_name) {
         let val = this.getStorage();
